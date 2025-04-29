@@ -14,7 +14,7 @@ object nave {
   method cantPasajeros() = pasajeros.size()
   method pasajeroDeMayorVitalidad() = pasajeros.max({p => p.vitalidad()})
   method pasajeroDeMenorVitalidad() = pasajeros.min({p => p.vitalidad()})
-  method estaEquilibrada() = !(self.pasajeroDeMayorVitalidad().vitalidad() <= self.pasajeroDeMenorVitalidad().vitalidad() * 2)
+  method estaEquilibrada() = (self.pasajeroDeMayorVitalidad().vitalidad() < self.pasajeroDeMenorVitalidad().vitalidad() * 2)
   method estaElElegido() = pasajeros.any({p => p.esElElegido()})
   method pasajerosSinElegido() = pasajeros.filter({p => !p.esElElegido()})
 
